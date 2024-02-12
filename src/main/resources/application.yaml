@@ -1,0 +1,34 @@
+spring:
+  profiles:
+    active: "local"
+  h2:
+    console:
+      enabled: true
+
+  datasource:
+    url: jdbc:h2:./Embed
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ${h2DbPwd:}
+    name: Embed
+    generate-unique-name: false
+  jpa:
+    open-in-view: true
+    show-sql: false
+
+  task:
+    execution:
+      pool:
+        core-size: 5
+        max-size: 10
+        queue-capacity: 50
+
+
+  liquibase:
+    change-log: classpath:config/liquibase/master.xml
+    enabled: true
+    drop-first: true
+
+server:
+  port: 443
+  address: 0.0.0.0

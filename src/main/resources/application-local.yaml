@@ -1,0 +1,9 @@
+spring:
+  liquibase:
+    drop-first: true
+
+server:
+  ssl:
+    enabled: true
+    certificate-private-key: C:/Work/certs/localhost_rdev_ch/localhost.rdev.ch_key.key
+    certificate: C:/Work/certs/localhost_rdev_ch/localhost_rdev_ch.crt
